@@ -8,11 +8,11 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    @Inject lateinit var dependency: SomeDependency
+    @Inject lateinit var someInterface: SomeInterface
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        textView.text = dependency.value
+        textView.text = someInterface.value
     }
 }
