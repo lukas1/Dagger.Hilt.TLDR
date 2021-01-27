@@ -1,7 +1,12 @@
 package com.example.daggerhilttldr
 
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainViewModel : ViewModel() {
-    val state = "I come from ViewModel"
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val someInterface: SomeInterface
+) : ViewModel() {
+    val state = someInterface.value
 }
